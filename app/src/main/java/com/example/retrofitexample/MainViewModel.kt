@@ -14,8 +14,8 @@ import com.example.retrofitexample.network.Character as Character1
 class MainViewModel(
     private val repository: Repository = Repository(ApiClient.apiService)
 ):ViewModel() {
-    private var _charactersLiveData = MutableLiveData<List<Character1>>()
-    val charactersLiveData:LiveData<List<Character1>>
+    private var _charactersLiveData = MutableLiveData<ScreenState<List<Character1>?>>()
+    val charactersLiveData:LiveData<ScreenState<List<Character1>?>>
     get() = _charactersLiveData
     init {
         fetchCharacter()
@@ -23,18 +23,24 @@ class MainViewModel(
 
     fun fetchCharacter(){
         val client = repository.getCharacters("1")
+        _charactersLiveData.postValue(ScreenState.Loading(null))
         client.enqueue(object : retrofit2.Callback<CharacterResponse>{
             override fun onResponse(
                 call: retrofit2.Call<CharacterResponse>,
                 response: Response<CharacterResponse>
             ) {
                 if(response.isSuccessful){
-                    _charactersLiveData.postValue(response.body()?.result)
+                    _charactersLiveData.postValue(ScreenState.Success(response.body()?.result))
+                }
+                else{
+                    _charactersLiveData.postValue(ScreenState.Error(response.code().toString(),null))
                 }
             }
 
             override fun onFailure(call: retrofit2.Call<CharacterResponse>, t: Throwable) {
-                Log.e("Failure",t.message.toString())
+                //Log.e("Failure",t.message.toString())
+                _charactersLiveData.postValue(ScreenState.Error(t.message.toString(),null))
+
             }
         })
     }
