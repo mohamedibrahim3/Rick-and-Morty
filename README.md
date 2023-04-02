@@ -1,4 +1,5 @@
-# Rick and Morty Android App (Kotlin)
+# Rick and Morty Android App (Kotlin).
+
 
 ![Rick and Morty](https://wallpapercave.com/dwp1x/wp3277665.jpg)
 
