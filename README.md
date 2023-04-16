@@ -10,7 +10,7 @@ This app is an Android application that fetches data from the [Rick and Morty AP
 - View detailed information about each character, including name, status, species, gender, and origin
 - Search for characters by name or species
 - Ability to save characters as favorites for quick access
-- Load images of characters using Glide.
+- Load images of characters using Glide
 
 ## Getting Started
 
