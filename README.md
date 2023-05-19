@@ -3,7 +3,6 @@
 ![Rick and Morty](https://wallpapercave.com/dwp1x/wp3277665.jpg)
 
 This app is an Android application that fetches data from the [Rick and Morty API](https://rickandmortyapi.com/) and displays it in a user-friendly way. It is built using Kotlin and utilizes various libraries such as Retrofit, Glide, and Androidx.
-
 ## Features
 - Display a list of all characters from the Rick and Morty show
 - View detailed information about each character, including name, status, species, gender, and origin
