@@ -17,7 +17,7 @@ To get started with the app, simply clone the repository and build it using Andr
 
 
 ## Libraries Used
-- [Retrofit](https://square.github.io/retrofit/): For API calls and network communication
+- [Retrofit](https://square.github.io/retrofit/): For API calls and network communication.
 - [Glide](https://github.com/bumptech/glide): For image loading and caching
 - [Androidx](https://developer.android.com/jetpack/androidx/): For updated Android support libraries
 
